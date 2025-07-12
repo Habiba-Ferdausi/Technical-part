@@ -1,3 +1,3 @@
 export const HUB_URL = 'https://tech-test.raintor.com/Hub';
-export const USER   = 'habiba';  
+export const USER   = 'habiba@gmail.com';  
 

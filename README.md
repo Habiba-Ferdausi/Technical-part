@@ -1,26 +1,77 @@
-# Real-Time Location & Infinite-Users - Technical task
+# Real-Time Location & Infinite-Users Technical test
 
-A showcase Next.js 15 app that lets you
+A compact **Next.js 15** playground showcasing real-time features including live GPS sharing, location tracking, and infinite user list browsing.
 
-1. **Share** your device’s live GPS (“Sender”),  
-2. **Track** shared locations on an interactive map (“Track”), and  
-3. **Browse** a virtualised, infinite-scroll list of user profiles (“Users”).
 
-Data moves through a public SignalR hub; the user feed is fetched from a
-sample REST API.
 
----
+##  Features
 
-## 🚀 Quick Start
+1. **Live GPS Sharing** (`/sender`)
+   - Broadcast your device's real-time location
+   - Automatic position updates
+   - Error handling for GPS permissions
 
-```bash
-# 1 Clone
-git clone https://github.com/<your-handle>/realtime-location-demo.git
-cd realtime-location-demo
+2. **Interactive Map Tracking** (`/track`)
+   - View multiple shared locations on OpenStreetMap
+   - Real-time marker updates
+   - Customizable map view
 
-# 2 Install deps
-pnpm install           # or npm i / yarn
+3. **Infinite User List** (`/users`)
+   - Virtualized scrolling for performance
+   - Simulated infinite data loading
+   - Responsive card layout
 
-# 3 Run dev server
+##  Quick Start
+
+### Development
+
+
+# Clone the repository
+git clone [https://github.com/Habiba-Ferdausi/Technical-part.git]
+cd Technical-part
+
+# Install dependencies
+pnpm install  # or npm install / yarn
+
+# Start development server
 pnpm dev
-# open http://localhost:3000
+# Open http://localhost:3000
+
+
+
+
+## 🛠 Technology Stack
+
+### Core Framework
+| Component           | Technology           | Description                                                                 |
+|---------------------|----------------------|-----------------------------------------------------------------------------|
+| Framework           | Next.js 15           | React 18 with App Router, Streaming SSR, and Route Groups                   |
+| State Management    | React Context       | Lightweight state sharing for global values                                 |
+| Styling             | Tailwind CSS v3     | Utility-first CSS with built-in dark mode support                           |
+
+### Real-Time Features
+| Component           | Technology           | Description                                                                 |
+|---------------------|----------------------|-----------------------------------------------------------------------------|
+| WebSocket           | @microsoft/signalr  | Handles real-time location broadcasting and updates                         |
+| GPS Handling        | Custom `useLivePosition` | React hook wrapping `navigator.geolocation` with auto-refresh             |
+
+### UI & Data
+| Component           | Technology           | Description                                                                 |
+|---------------------|----------------------|-----------------------------------------------------------------------------|
+| Mapping             | react-leaflet + OpenStreetMap | Interactive maps with free tile servers                                  |
+| Virtual Lists       | react-window         | Efficient rendering for infinite user lists                                 |
+| Animation           | Framer Motion        | Smooth component transitions and interactions                               |
+| Icons               | lucide-react         | Lightweight, tree-shakable SVG icons                                        |
+
+### Data Management
+| Component           | Technology           | Description                                                                 |
+|---------------------|----------------------|-----------------------------------------------------------------------------|
+| API Client          | Axios                | Promise-based HTTP requests with interceptors                               |
+| Data Fetching       | TanStack Query v5    | Server-state management with infinite query support                         |
+
+### Utilities
+| Component           | Technology           | Description                                                                 |
+|---------------------|----------------------|-----------------------------------------------------------------------------|
+| Error Handling      | Next.js error.tsx    | Route-level error boundaries                                                |
+| Loading States      | react-spinners       | Customizable loading indicators                                             |
+                         

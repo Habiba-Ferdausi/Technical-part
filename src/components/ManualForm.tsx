@@ -11,8 +11,8 @@ function ManualForm({ onSend }: { onSend: (lat: number, lon: number) => void }) 
       >
         <h2 className="text-lg font-semibold">Simulate coordinates</h2>
         <div className="flex gap-2">
-          <input value={lat} onChange={e => setLat(e.target.value)} className="flex-1 rounded border p-2" placeholder="Latitude" />
-          <input value={lon} onChange={e => setLon(e.target.value)} className="flex-1 rounded border p-2" placeholder="Longitude" />
+          <input value={lat} onChange={e => setLat(e.target.value)} className="flex-1 rounded border p-2 focus:outline-none" placeholder="Latitude" />
+          <input value={lon} onChange={e => setLon(e.target.value)} className="flex-1 rounded border p-2 focus:outline-none" placeholder="Longitude" />
         </div>
         <button  className="w-full rounded px-4 py-2 font-semibold text-white bg-purple-500 hover:opacity-90">
           Broadcast

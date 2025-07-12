@@ -5,16 +5,19 @@ import dynamic from 'next/dynamic';
 import { motion } from 'framer-motion';
 import { MapPin, Satellite } from 'lucide-react';
 import { useSignalR, LatLon } from '@/hooks/useSignalR';
+import { USER } from '@/lib/constants';
 
 const MapView = dynamic(() => import('@/components/Mapviewer'), { ssr: false });
 
 export default function ReceiverPage() {
   const { latest, ready, error } = useSignalR();
   const [coords, setCoords] = useState<LatLon | null>(null);
-
-  useEffect(() => {
-    if (latest) setCoords(latest);
-  }, [latest]);
+  
+useEffect(() => {
+  if (latest && latest?.userName === USER) {
+    setCoords(latest);
+  }
+}, [latest]);
 
   return (
     <main className="relative flex min-h-screen items-center justify-center bg-gradient-to-br from-purple-50 to-blue-100 p-6">

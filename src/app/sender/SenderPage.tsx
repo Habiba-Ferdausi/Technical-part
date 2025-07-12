@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { RadioTower, XCircle } from 'lucide-react';
+import { RadioTower } from 'lucide-react';
 import { useSignalR } from '@/hooks/useSignalR';
 import { useLivePosition } from '@/hooks/useLivePosition';
 import ManualForm from '@/components/ManualForm';
@@ -13,16 +13,25 @@ export default function SenderPage() {
   const { err, watching, start, stop } = useLivePosition();
   const [coords, setCoords] = useState<{ lat: number; lon: number } | null>(null);
   const [autoStart, setAutoStart] = useState(true);
-
+console.log('SenderPage', { ready, watching, coords, err ,send});
   
-  useEffect(() => {
-    if (autoStart && ready && !watching) start(broadcast);
-  }, [autoStart, ready, watching, start]);
+useEffect(() => {
+    if (autoStart && ready && !watching) {
+      start(broadcast);
+    }
+  }, [autoStart, ready, watching]); 
+
 
   function broadcast(lat: number, lon: number) {
     setCoords({ lat, lon });
-    if (ready) send({ lat, lon, userName: USER });
-  }
+    if (ready) { 
+      send({ lat, lon, userName: USER }).catch(error => {
+        console.error('Send error:', error);
+      });
+    } else {
+      console.warn('SignalR not ready');
+    }
+}
 
   return (
     <main className="relative flex min-h-screen items-center justify-center ">

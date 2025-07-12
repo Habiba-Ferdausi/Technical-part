@@ -1,15 +1,15 @@
 import React from 'react'
 import { Metadata } from 'next';
-import SenderPage from './SenderPage';
+import TrackingLocation from './TrackLocation';
 
 export const metadata: Metadata = {
-    title: "Send Location | Technical Test",
+    title: "Tracking Location | Technical Test",
 
   };
 export default function page() {
   return (
     <div>
-     <SenderPage/>
+     <TrackingLocation/>
     </div>
   )
 }

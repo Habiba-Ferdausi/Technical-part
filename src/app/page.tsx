@@ -30,7 +30,7 @@ export default function Home() {
       desc: "Broadcast this device’s GPS",
     },
     {
-      href: '/receiver',
+      href: '/track',
       grad: 'from-emerald-500 to-emerald-600',
       title: 'Track location',
       Icon: LocateFixedIcon,
@@ -83,6 +83,7 @@ export default function Home() {
               <Link
                 href={c.href}
                 aria-label={c.title}
+                target='_blank'
                 className="relative flex flex-col items-center gap-4 overflow-hidden rounded-3xl p-8 text-white shadow-xl focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/60"
               >
             

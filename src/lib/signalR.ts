@@ -2,7 +2,7 @@ import { HubConnectionBuilder, LogLevel, HubConnection } from '@microsoft/signal
 
 export const buildSignalRConnection = (): HubConnection =>
   new HubConnectionBuilder()
-    .withUrl('https://tech-test.raintor.com/Hub')
+    .withUrl(process.env.NEXT_PUBLIC_HUB_URL || '')
     .withAutomaticReconnect()
     .configureLogging(LogLevel.Information)
     .build();

@@ -25,7 +25,7 @@ A compact **Next.js 15** playground showcasing real-time features including live
 
 ### Development
 
-```bash
+
 # Clone the repository
 git clone [https://github.com/Habiba-Ferdausi/Technical-part.git]
 cd Technical-part

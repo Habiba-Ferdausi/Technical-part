@@ -11,7 +11,7 @@ import {
 export default function Home() {
 
   const cardVariants:Variants = {
-    hidden: (i: number) => ({ opacity: 0, y: 25 }),
+    
     show:   (i: number) => ({
       opacity: 1,
       y: 0,
